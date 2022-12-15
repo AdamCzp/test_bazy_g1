@@ -4,4 +4,6 @@ insert into tabela select * from etapy_wyprawy;
 insert into tabela select * from sektor;
 insert into tabela select * from wyprawa;
 2.select * from kreatura k.left join uczestnicy on u.id_uczestnika = k.idKreatury where u.id_uczestnika is null;
+ *poprawione select k.nazwa, k.idKreatury, u.id_uczestnika from wikingowie.kreatura kleft join  wikingowie.uczestnicy u ON k.idKreatury=u.id_uczestnika where u.id_uczestnika is null;
 3.select w.nazwa, sum(e.ilosc) from wyprawa w inner join uczestnicy u on w.id_wyprawy=u.id_wyprawy inner join ekwipunek e on u.id_uczestnika=e.idkreaturu group by w.id_wyprawy;
+*poprawione SELECT w.nazwa, sum(e.ilosc) FROM wikingowie.wyprawa w inner join wikingowie.uczestnicy u ON w.id_wyprawy=u.id_wyprawy inner join wikingowie.ekwipunek e ON u.id_uczestnika=e.idKreatury group by w.id_wyprawy;
